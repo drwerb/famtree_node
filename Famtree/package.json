@@ -1,0 +1,13 @@
+{
+  "name": "famtree",
+  "version": "0.0.0",
+  "description": "Famtree",
+  "main": "server.js",
+  "author": {
+    "name": "Volodymyr"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
+}

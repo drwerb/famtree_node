@@ -1,0 +1,10 @@
+﻿body {
+}
+
+table.persons-edit, th.persons-edit, td.persons-edit {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+    border: thin solid;
+}
