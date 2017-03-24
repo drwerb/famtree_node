@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <title></title>
     <script type="text/javascript" src="/lib/angular-1.6.1-debug.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource-debug.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/famtree.css" />
 </head>
 <body ng-app="FamtreeApp">
-  <div>
+  <div ng-controller="PersonsCtrl as personsCtrl">
     <table class="persons-edit">
       <thead>
         <tr>
@@ -17,7 +18,21 @@
           <th>Middle name</th>
         </tr>
       </thead>
+      <tbody>
+        <tr ng-repeat="person in personsCtrl.persons track by $index" >
+          <!--<td ng-model="person.firstName"></td>
+          <td ng-model="person.lastName"></td>
+          <td ng-model="person.middleName"></td>-->
+          <td>{{person.firstName}}</td>
+          <td>{{person.lastName}}</td>
+          <td>{{person.middleName}}</td>
+        </tr>
+      </tbody>
+
     </table>
   </div>
+
+  <script type="text/javascript" src="/scripts/famtree-app.js"></script>
+
 </body>
 </html>
