@@ -23,22 +23,20 @@ GRANT ALL ON SCHEMA public TO public;
 COMMENT ON SCHEMA public
   IS 'standard public schema';
 
--- Table: public."Persons"
+-- Table: public.persons
 
--- DROP TABLE public."Persons";
+-- DROP TABLE public.persons;
 
-CREATE TABLE public."Persons"
+CREATE TABLE public.persons
 (
-  "PersonId" integer NOT NULL,
-  "LastName" character varying(20),
-  "FirstName" character varying(20),
-  "MiddleName" character varying(20),
-  CONSTRAINT pk_person_id PRIMARY KEY ("PersonId")
+  personid integer NOT NULL DEFAULT nextval('persons_personid_seq'::regclass),
+  lastname character varying(20),
+  firstname character varying(20),
+  middlename character varying(20),
+  CONSTRAINT pk_person_id PRIMARY KEY (personid)
 )
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE public."Persons"
+ALTER TABLE public.persons
   OWNER TO famtree;
-GRANT ALL ON TABLE public."Persons" TO famtree;
-GRANT SELECT ON TABLE public."Persons" TO public;

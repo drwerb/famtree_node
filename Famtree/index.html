@@ -10,6 +10,22 @@
 </head>
 <body ng-app="FamtreeApp">
   <div ng-controller="PersonsCtrl as personsCtrl">
+    <div>
+      <p>
+        <span>First name</span>
+        <input type="text" ng-model="personsCtrl.newFirstName" />
+      </p>
+      <p>
+        <span>Last name</span>
+        <input type="text" ng-model="personsCtrl.newLastName" />
+      </p>
+      <p>
+        <span>Middle name</span>
+        <input type="text" ng-model="personsCtrl.newMiddleName" />
+      </p>
+      <button ng-click="personsCtrl.addPerson()">Add</button>
+    </div>
+    <br />
     <table class="persons-edit">
       <thead>
         <tr>
@@ -23,8 +39,8 @@
           <!--<td ng-model="person.firstName"></td>
           <td ng-model="person.lastName"></td>
           <td ng-model="person.middleName"></td>-->
-          <td>{{person.firstName}}</td>
           <td>{{person.lastName}}</td>
+          <td>{{person.firstName}}</td>
           <td>{{person.middleName}}</td>
         </tr>
       </tbody>

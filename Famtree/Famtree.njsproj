@@ -48,6 +48,7 @@
     <Content Include="css\famtree.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="db_schema\famtree.sql" />
     <Content Include="index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
