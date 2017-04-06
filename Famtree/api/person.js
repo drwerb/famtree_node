@@ -56,4 +56,19 @@ router.post('/', function (req, res) {
         });
 });
 
+router.delete(/^\/([0-9]+)/, function (req, res) {
+    db.any(' \
+            delete from public.persons where personid = $1', [
+            req.params[0],
+        ]
+    )
+        .then(data => {
+            res.json({ personId: data.personid });
+        })
+        .catch(error => {
+            console.log("ERROR user deleting:", error.message || error); // print error;
+            res.status(500).json({ message: "ERROR: " + (error.message || error) })
+        });
+});
+
 module.exports = router;

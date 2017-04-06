@@ -17,6 +17,7 @@ app.use("/api/person", require('./api/person'));
 
 app.use("/lib", express.static("lib"));
 app.use("/css", express.static("css"));
+app.use("/fonts", express.static("fonts"));
 app.use("/scripts", express.static("scripts"));
 
 // index page

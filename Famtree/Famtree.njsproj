@@ -49,11 +49,16 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="db_schema\famtree.sql" />
+    <Content Include="fonts\linea-arrows-10.eot" />
+    <Content Include="fonts\linea-arrows-10.svg" />
+    <Content Include="fonts\linea-arrows-10.ttf" />
+    <Content Include="fonts\linea-arrows-10.woff" />
     <Content Include="index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="fonts\" />
     <Folder Include="lib\" />
     <Folder Include="css\" />
     <Folder Include="api\" />

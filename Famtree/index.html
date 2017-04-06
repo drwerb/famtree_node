@@ -36,12 +36,14 @@
       </thead>
       <tbody>
         <tr ng-repeat="person in personsCtrl.persons track by $index" >
-          <!--<td ng-model="person.firstName"></td>
-          <td ng-model="person.lastName"></td>
-          <td ng-model="person.middleName"></td>-->
           <td>{{person.lastName}}</td>
           <td>{{person.firstName}}</td>
           <td>{{person.middleName}}</td>
+          <td>
+            <div class="delete-person-btn" ng-click="personsCtrl.removePerson(this.person)">
+              <span class="icon-arrows-remove"></span>
+            </div>
+          </td>
         </tr>
       </tbody>
 

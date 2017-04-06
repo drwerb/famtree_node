@@ -29,7 +29,6 @@ ModelHelper.prototype.createModelFromDB = function (modelClass, args) {
         mappedArgs[modelPropName] = args[dbPropName];
     }
 
-    console.log(mappedArgs);
     obj.initProperties(mappedArgs);
     return obj;
 }

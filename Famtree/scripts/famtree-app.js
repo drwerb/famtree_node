@@ -5,6 +5,10 @@
             query: { isArray: true },
             post: {
                 method: 'POST',
+            },
+            remove: {
+                method: 'DELETE',
+                url: '/api/person/:id'
             }
         });
         var me = this;
@@ -20,6 +24,14 @@
                 lastName: me.newLastName,
                 middleName: me.newMiddleName,
             }, updatePersonList);
+        };
+
+        me.removePerson = function (person) {
+            personResource.remove({ id: person.personId },
+                updatePersonList,
+                function () {
+                    alert('Error while person remove');
+                });
         };
 
         var
