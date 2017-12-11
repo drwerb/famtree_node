@@ -1,0 +1,8 @@
+<h2>Family Members</h2>
+
+<ul>
+	<li *ngFor="let member of members">
+		<span routerLink="/member">{{member.lastName}} {{member.firstName}} {{member.middleName}}</span>
+		<input type="button" name="x" (click)="deleteMember(member)">
+	</li>
+</ul>
