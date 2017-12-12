@@ -27,8 +27,8 @@ export class DataService {
   }
 
   getMember(id: number): Observable<Member> {
-    let deleteUrl = `${this.membersUrl}/id=${id}`;
-    return this.http.get<Member>(this.membersUrl).pipe();
+    let getMemberUrl = `${this.membersUrl}/${id}`;
+    return this.http.get<Member>(getMemberUrl).pipe();
   }
 
 }

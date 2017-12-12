@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs/Observable';
 
 import { Member } from '../models/Member'
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-member-details',
@@ -9,11 +13,27 @@ import { Member } from '../models/Member'
 })
 export class MemberDetailsComponent implements OnInit {
 
-  constructor() { }
+  member: Member;
+
+  constructor(
+      private activatedRoute: ActivatedRoute,
+      private dataService: DataService
+      ) { }
 
   ngOnInit() {
+      this.getMember();
   }
 
-  getMemeber
+  getMember(): void {
+      let memberId = +this.activatedRoute.snapshot.paramMap.get('id');
+      this.dataService.getMember(memberId)
+          .subscribe(
+              m => this.innn(m)
+           );
+  }
+
+  innn(m: Member): void {
+      this.member = m;
+  }
 
 }
