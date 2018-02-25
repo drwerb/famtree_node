@@ -15,6 +15,15 @@ export class MemberDetailsComponent implements OnInit {
 
   member: Member;
 
+  genders = [ "Male", "Female" ];
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.member); }
+
   constructor(
       private activatedRoute: ActivatedRoute,
       private dataService: DataService

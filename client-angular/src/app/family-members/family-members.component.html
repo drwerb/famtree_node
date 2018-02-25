@@ -1,8 +1,12 @@
 <h2>Family Members</h2>
 
+<div>
+	<input type="button" value="Add member" (click)="addMember()">
+</div>
+
 <ul>
 	<li *ngFor="let member of members">
 		<span routerLink="/member/{{member.id}}">{{member.lastName}} {{member.firstName}} {{member.middleName}}</span>
-		<input type="button" name="x" (click)="deleteMember(member)">
+		<input type="button" value="x" (click)="deleteMember(member)">
 	</li>
 </ul>

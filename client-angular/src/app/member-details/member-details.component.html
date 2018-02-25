@@ -1,12 +1,36 @@
-<div *ngIf="member">
+<form *ngIf="member" #memberForm="ngForm">
+    {{diagnostic}}
+
     <div class="member-form-field">
-        <label>Last name 
-            <input [(ngModel)]="member.lastName">
-        </label>
+        <label for="lastname">Last name</label>
+        <input tyep="text" class="form-control" id="lastName" [(ngModel)]="member.lastName" name="lastName" required #spy>
+        <br>TODO: remove this: {{spy.className}}
     </div>
+
+
     <div class="member-form-field">
-        <label>First name 
-            <input [(ngModel)]="member.firstName">
-        </label>
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="member.firstName" name="firstName" required>
     </div>
-</div>
+
+    <div class="member-form-field">
+        <label for="middleName">Middle name</label>
+        <input type="text" class="form-control" id="middleName" [(ngModel)]="member.middleName" name="middleName">
+    </div>
+
+    <div class="member-form-field">
+        <label for="birthDate">Birth Date</label>
+        <input type="text" class="form-control" id="birthDate" [(ngModel)]="member.birthDate" name="birthDate">
+    </div>
+
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" [(ngModel)]="member.gender" name="gender" required>
+          <option *ngFor="let gen of genders" [value]="gen">{{gen}}</option>
+        </select>
+    </div>
+
+    TODO: remove this: {{member.gender}}
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
